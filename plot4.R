@@ -16,7 +16,7 @@ pwrSubset <- cbind(dateTime, pwrSubset)
 par(mfrow=c(2,2))
 
 #1st chart Global Active Power
-hist(pwrSubset$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)")
+plot(pwr$Global_active_power~pwr$dateTime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
 
 #2nd chart Voltage
 plot(pwrSubset$Voltage~pwrSubset$dateTime, type="l", ylab="Voltage", xlab="datetime")
@@ -25,7 +25,7 @@ plot(pwrSubset$Voltage~pwrSubset$dateTime, type="l", ylab="Voltage", xlab="datet
 plot(pwrSubset$Sub_metering_1~pwrSubset$dateTime, type="l", ylab="Energy sub metering", xlab="")
 lines(pwrSubset$Sub_metering_2~pwrSubset$dateTime, col= "red")
 lines(pwrSubset$Sub_metering_3~pwrSubset$dateTime, col= "blue")
-legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c("black","red","blue"), lty="solid")
+legend("topright", legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), col=c("black","red","blue"), bty = "n", cex=0.55, lty="solid")
 
 #4th chart Global Reactive Power
 plot(pwrSubset$Global_reactive_power~pwrSubset$dateTime, type="l", ylab="Global_reactive_power", xlab="datetime")
